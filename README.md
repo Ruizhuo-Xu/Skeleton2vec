@@ -1,7 +1,7 @@
 # Skeleton2vec: A Self-supervised Learning Framework with Contextualized Target Representations for Skeleton Sequence
 Ruizhuo Xu, Linzhi Huang, Mei Wang, Jiani Hu, Weihong Deng
 
-Submitted to CVPR 2024 [[Paper Link]](https://arxiv.org/)
+[[Paper Link]](https://arxiv.org/)
 
 This repository includes Python (PyTorch) implementation of the Skeleton2vec.
 
