@@ -19,10 +19,12 @@ import torch.nn.functional as F
 from einops import rearrange, reduce, repeat
 from einops.layers.torch import Rearrange, Reduce
 from torchinfo import summary
+from visualizer import get_local
 
 from . import models
 from .drop import DropPath
 from .utils import trunc_normal_
+# get_local.activate()
 
     
 class JointEmbedding(nn.Module):
@@ -84,6 +86,7 @@ class MultiHeadAttention(nn.Module):
         self.proj = nn.Linear(emb_size, emb_size)
         self.scaling = (self.emb_size // num_heads) ** -0.5
 
+    @get_local('att')
     def forward(self, x : Tensor, mask: Tensor = None) -> Tensor:
         # split keys, queries and values in num_heads
         queries = rearrange(self.queries(x), "b n (h d) -> b h n d", h=self.num_heads)

@@ -60,7 +60,7 @@ model:
         drop_p: 0.
     # encoder_pretrain_weight: save/ntu60_xsub_pretrain_1e-3lr_1e-5minlr_0.2tau_4layers_12909/epoch-100.pth
     # encoder_pretrain_weight: checkpoints/ntu60_xsub/epoch-300.pth
-    encoder_pretrain_weight: checkpoints/ntu60_xsub/11-11/epoch-600.pth
+    encoder_pretrain_weight: save/epoch-600.pth
     encoder_freeze: true
     drop_path_p: 0.
     using_ema_model: true

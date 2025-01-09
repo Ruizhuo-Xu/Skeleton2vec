@@ -408,6 +408,7 @@ if __name__ == "__main__":
     parser.add_argument('--beta', type=float, default=None)
     parser.add_argument('--save_path', default='./save')
     parser.add_argument('--mask_ratio', type=float,default=None)
+    parser.add_argument('--ema_decay', type=float,default=None)
     args = parser.parse_args()
 
     # os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
@@ -432,6 +433,8 @@ if __name__ == "__main__":
         config['s_tau'] = args.beta
     if args.mask_ratio is not None:
         config['mask_ratio'] = args.mask_ratio
+    if args.ema_decay is not None:
+        config['model']['args']['ema_spec']['args']['ema_decay'] = args.ema_decay
 
     gpus = torch.cuda.device_count()
     # world_size = gpus * args.nodes

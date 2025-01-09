@@ -6,7 +6,8 @@ test_dataset:
       pipelines: [
         {name: PreNormalize3D, args: {align_spine: false}},
         {name: GenSkeFeat, args: {dataset: 'nturgb+d', feats:['j']}},
-        {name: UniformSampleDecode, args: {clip_len: 90, num_clips: 10}},
+        # {name: UniformSampleDecode, args: {clip_len: 90, num_clips: 10}},
+        {name: UniformSampleDecode, args: {clip_len: 90, num_clips: 1}},
         # {name: RandomResizedCrop, args: {p_interval: [0.95, 0.95], clip_len: 120}},
         {name: FormatGCNInput, args: {}},
         {name: Collect, args: {keys: [keypoint, label], meta_keys: []}},

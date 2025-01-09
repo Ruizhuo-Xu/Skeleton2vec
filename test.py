@@ -65,11 +65,6 @@ def make_test_data_loader():
 
 def load_model(checkpoint_path):
     checkpoint = torch.load(checkpoint_path)
-    # # 定义前缀
-    # prefix = 'module.'
-
-    # # 去除键的前缀
-    # checkpoint['model']['sd'] = {key.replace(prefix, ''): value for key, value in checkpoint['model']['sd'].items() if key.startswith(prefix)}
     model = models.make(checkpoint['model'], load_sd=True)
     return model
 
